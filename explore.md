@@ -1,3 +1,10 @@
+# Checklist
+
+1. [ ] - support html?
+   * [It's an open issue](https://github.com/airbnb/knowledge-repo/issues/336)
+2. [ ] - support ipynb/rmd/md?
+3. [ ] - sync with git?
+
 
 
 # Installation
@@ -53,6 +60,39 @@ typing-extensions
 
 
 All backends also allow configuration using a YAML configuration file at ‘/.knowledge_repo_config.yml’
+# Test
+
+Failed
+
+```
+(py_36_tf_21) YuLong@MacBook-Pro-3:~/Desktop/Working_Area/knowledge-repo$ ./run_tests.sh
+
+Setting up test environment
+---------------------------
+
+Removing artifacts from previous testing...
+Creating a test repository in ./tests/test_repo...
+Knowledge repository successfully initialized for uri `/Users/YuLong/Desktop/Working_Area/knowledge-repo/tests/test_repo`.
+WARNING:knowledge_repo.repositories.gitrepository:This repository does not have a remote, and so post review is being skipped. Adding post directly into published branch...
+INFO:knowledge_repo.repositories.gitrepository:Checking out (and/or creating) a new branch `master`...
+INFO:knowledge_repo.repositories.gitrepository:Adding and committing 'projects/test/ipynb_test.kp' to local branch `master`...
+/bin/sh: Rscript: command not found
+Traceback (most recent call last):
+  File "./scripts/knowledge_repo", line 286, in <module>
+    kp = knowledge_repo.KnowledgePost.from_file(args.filename, src_paths=args.src)
+  File "./scripts/../knowledge_repo/post.py", line 490, in from_file
+    kp = KnowledgePostConverter.for_file(cls(), filename, format=format, postprocessors=postprocessors, interactive=interactive).from_file(filename, **opts)
+  File "./scripts/../knowledge_repo/converter.py", line 50, in wrapped
+    f(*args, **kwargs)
+  File "./scripts/../knowledge_repo/converters/rmd.py", line 57, in from_file
+    subprocess.check_output(runcmd, shell=True)
+  File "/Users/YuLong/miniconda3/envs/py_36_tf_21/lib/python3.6/subprocess.py", line 356, in check_output
+    **kwargs).stdout
+  File "/Users/YuLong/miniconda3/envs/py_36_tf_21/lib/python3.6/subprocess.py", line 438, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'Rscript --no-save --no-restore --slave -e "library(rmarkdown);render('/Users/YuLong/Desktop/Working_Area/knowledge-repo/knowledge_repo/templates/knowledge_template.Rmd', '/var/folders/nm/7b0tg1dn77xfjkpwk_h__0kc0000gq/T/tmpizvej38g', output_format = html_document(keep_md = T));"' returned non-zero exit status 127.
+
+```
 
 # Git Knowledge Repo
 
