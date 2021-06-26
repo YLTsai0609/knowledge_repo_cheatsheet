@@ -5,3 +5,7 @@
 [airbnb/knowledge-repo 5k+ stars](https://github.com/airbnb/knowledge-repo)
 
 [doc](https://knowledge-repo.readthedocs.io/en/latest/installation.html)
+
+# suppport format
+
+ipynb, Rmarkdown, pdf
