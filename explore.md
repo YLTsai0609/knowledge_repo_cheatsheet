@@ -240,3 +240,8 @@ now check the flask app
 
 
 
+## Docker-version
+
+/Users/yulongtsai/Desktop/Working_Area/knowledge-repo-docker
+
+目前 docker 還有點問題，應該是要從docker image調整，或是等待官方docker image 釋出
